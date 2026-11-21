@@ -1,0 +1,6 @@
+{
+  "name": "Upload artifact template",
+  "description": "Upload artifact template",
+  "iconName": "octicon terminal",
+  "categories": ["Artifacts"]
+}
