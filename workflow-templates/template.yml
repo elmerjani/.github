@@ -1,0 +1,22 @@
+name: template artifact
+on: workflow_call
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print runner hostname anc IP
+        run: |
+         echo 'runner hostname: $(hostname)'
+         curl http://ipinfo.io/ip
+      - name: create cert.txt
+        run: |
+          echo "certificate content' > cert.txt
+      - name: zip the cert
+        run: |
+          zip cert.zip cert.txt
+      - name: upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: cert.zip
+          path: cert.zip
+        
